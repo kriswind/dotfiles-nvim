@@ -6,6 +6,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- Auto updates clipboard when yanking, deleting, etc.
+vim.opt.clipboard = 'unnamedplus'
+
 -- Make line numbers default
 vim.opt.number = true
 -- relative index numbers
@@ -16,6 +19,17 @@ vim.opt.mouse = 'a'
 
 -- Save undo history
 vim.opt.undofile = true
+
+
+-- Tab indenting is for chumps
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.softtabstop = 4
+
+-- Highlight tabs
+vim.api.nvim_set_hl(0, "TabHighlight", { bg = "#FF0000" })
+vim.fn.matchadd("TabHighlight", "\t")
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
@@ -29,4 +43,4 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 require("config.lazy")
-
+require('mini.pairs').setup()
