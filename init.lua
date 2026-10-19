@@ -45,5 +45,3 @@ vim.opt.cursorline = true
 
 require("config.lazy")
 require('mini.pairs').setup()
-require('mini.trailspace').setup()
-
